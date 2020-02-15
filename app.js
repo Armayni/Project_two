@@ -142,53 +142,53 @@ $.ajax({
 })
 
 // 4th visualization
-// $.ajax({
-//   url: 'http://localhost:5000/api/v1.0/crime_data4',
-//   headers: {
-//     'Access-Control-Allow-Origin': '*'
-//   },
+$.ajax({
+  url: 'http://localhost:5000/api/v1.0/crime_data4',
+  headers: {
+    'Access-Control-Allow-Origin': '*'
+  },
 
-//   type: 'GET',
-//   /* etc */
-//   success: function (crime_data4) {
-//     console.log('Dataset 4');
-//     console.log(crime_data4);
-//     let days = [];
+  type: 'GET',
+  /* etc */
+  success: function (crime_data4) {
+    console.log('Dataset 4');
+    console.log(crime_data4);
+    let beats = [];
 
-//     crime_data4.forEach(crime4 => days.push(crime4.Day_of_week));
-//     console.log('Labels');
-//     console.log(days);
+    crime_data4.forEach(crime4 => beats.push(crime4.Beat));
+    console.log('Labels');
+    console.log(beats);
 
-//     let crimes_totalnamber = [];
-//     crime_data4.forEach(crime4 => crimes_totalnamber.push(crime4.Crimes_number));
+    let crimes_totalnamber = [];
+    crime_data4.forEach(crime4 => crimes_totalnamber.push(crime4.Crimes_number));
 
-//     console.log(crimes_totalnamber);
+    console.log(crimes_totalnamber);
 
 
-//     // Display the default plot
-//     function init_fordata4() {
-//       let data4 = [{
-//         values: crimes_totalnamber,
-//         labels: days,
-//         type: "pie",
-//         textinfo: "label+percent",
-//         textposition: "outside",
-//         automargin: true
-//       }];
+    // Display the default plot
+    function init_fordata4() {
+      let data4 = [{
+        values: crimes_totalnamber,
+        labels: beats,
+        type: "pie",
+        textinfo: "label+percent",
+        textposition: "outside",
+        automargin: true
+      }];
 
-//       let layout4 = {
-//         height: 600,
-//         width: 800,
-//         margin: {
-//           "t": 0,
-//           "b": 0,
-//           "l": 0,
-//           "r": 0
-//         }
-//       };
+      let layout4 = {
+        height: 600,
+        width: 800,
+        margin: {
+          "t": 0,
+          "b": 0,
+          "l": 0,
+          "r": 0
+        }
+      };
 
-//       Plotly.newPlot("pie", data4, layout4);
-//     }
-//     init_fordata4();
-//   }
-// })
+      Plotly.newPlot("pie2", data4, layout4);
+    }
+    init_fordata4();
+  }
+})

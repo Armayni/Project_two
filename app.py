@@ -21,7 +21,7 @@ engine = create_engine(
 Base = automap_base()
 Base.prepare(engine, reflect=True)
 Base.classes.keys()
-sac_crime_data = Base.classes.Sacramento_crime
+sac_crime_data = Base.classes.sacramento_crime
 # Station = Base.classes.station
 session = Session(engine)
 
@@ -96,19 +96,24 @@ def crime_data3():
     return jsonify(list)
 
 
-# @app.route("/api/v1.0/crime_data4")
-# @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
-# def crime_data4():
-#     subqry4 = session.query(sac_crime_data.Days, sac_crime_data.Offense_Category, func.count(
-#         sac_crime_data.Offense_Category)).group_by(sac_crime_data.Days, sac_crime_data.Offense_Category).all()
+@app.route("/api/v1.0/crime_data4")
+@cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
+def crime_data4():
+    # subqry4 = session.query(sac_crime_data.Beat, sac_crime_data.Offense_Category, func.count(
+    #     sac_crime_data.Offense_Category)).group_by(sac_crime_data.Beat, sac_crime_data.Offense_Category).all()
+    subqry4 = session.query(sac_crime_data.Beat, func.count(
+        sac_crime_data.Offense_Category)).\
+        filter(sac_crime_data.Police_District.in_(['1', '2', '3', '4', '5', '6'])).\
+        group_by(sac_crime_data.Beat).\
+        order_by(func.count(sac_crime_data.Offense_Category).desc()).all()
 
-#     list = []
-#     for value in subqry4:
-#         dict_values = {"Days": value[0],
-#                        "Crimes_number": value[2]
-#                        }
-#         list.append(dict_values)
-#     return jsonify(list)
+    list = []
+    for value in subqry4:
+        dict_values = {"Beat": value[0],
+                       "Crimes_number": value[1]
+                       }
+        list.append(dict_values)
+    return jsonify(list)
 
 
 if __name__ == "__main__":
