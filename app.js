@@ -34,7 +34,7 @@ $.ajax({
     // console.log(jsondata);
   }
 })
-//Most frequent crime for each district
+//chart_2 Most frequent crime for each district
 $.ajax({
   url: 'http://localhost:5000/api/v1.0/crime_data2',
   headers: {
@@ -88,7 +88,7 @@ $.ajax({
 })
 
 
-//Volume of crimes vs days
+//chart-3 Volume of crimes vs days
 
 $.ajax({
   url: 'http://localhost:5000/api/v1.0/crime_data3',
@@ -135,8 +135,60 @@ $.ajax({
         }
       };
 
-      Plotly.newPlot("pie", data3, layout3);
+      Plotly.newPlot("pie1", data3, layout3);
     }
     init_fordata3();
   }
 })
+
+// 4th visualization
+// $.ajax({
+//   url: 'http://localhost:5000/api/v1.0/crime_data4',
+//   headers: {
+//     'Access-Control-Allow-Origin': '*'
+//   },
+
+//   type: 'GET',
+//   /* etc */
+//   success: function (crime_data4) {
+//     console.log('Dataset 4');
+//     console.log(crime_data4);
+//     let days = [];
+
+//     crime_data4.forEach(crime4 => days.push(crime4.Day_of_week));
+//     console.log('Labels');
+//     console.log(days);
+
+//     let crimes_totalnamber = [];
+//     crime_data4.forEach(crime4 => crimes_totalnamber.push(crime4.Crimes_number));
+
+//     console.log(crimes_totalnamber);
+
+
+//     // Display the default plot
+//     function init_fordata4() {
+//       let data4 = [{
+//         values: crimes_totalnamber,
+//         labels: days,
+//         type: "pie",
+//         textinfo: "label+percent",
+//         textposition: "outside",
+//         automargin: true
+//       }];
+
+//       let layout4 = {
+//         height: 600,
+//         width: 800,
+//         margin: {
+//           "t": 0,
+//           "b": 0,
+//           "l": 0,
+//           "r": 0
+//         }
+//       };
+
+//       Plotly.newPlot("pie", data4, layout4);
+//     }
+//     init_fordata4();
+//   }
+// })

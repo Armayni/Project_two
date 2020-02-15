@@ -96,5 +96,20 @@ def crime_data3():
     return jsonify(list)
 
 
+# @app.route("/api/v1.0/crime_data4")
+# @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
+# def crime_data4():
+#     subqry4 = session.query(sac_crime_data.Days, sac_crime_data.Offense_Category, func.count(
+#         sac_crime_data.Offense_Category)).group_by(sac_crime_data.Days, sac_crime_data.Offense_Category).all()
+
+#     list = []
+#     for value in subqry4:
+#         dict_values = {"Days": value[0],
+#                        "Crimes_number": value[2]
+#                        }
+#         list.append(dict_values)
+#     return jsonify(list)
+
+
 if __name__ == "__main__":
     app.run(debug=True)
