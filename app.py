@@ -40,6 +40,7 @@ def welcome():
         f"/api/v1.0/start/end<br/>"
         f"/api/v1.0/crime_data<br/>"
         f"/api/v1.0/crime_data2<br/>"
+        f"/api/v1.0/crime_data3<br/>"
     )
 
 
@@ -68,7 +69,18 @@ def crime_data2():
 
     values = session.query(subqry).filter(subqry.c.row_num == 1).filter(
         subqry.c.Police_District.in_(['1', '2', '3', '4', '5', '6'])).all()
+    # values = session.query(sac_crime_data.Police_District,
+    #                        sac_crime_data.Offense_Category,
+    #                        func.count(sac_crime_data.Offense_Category),
+    #                        func.row_number().over(partition_by=sac_crime_data.Police_District, order_by=func.count(sac_crime_data.Offense_Category)).label('row_num')).\
+    #                        group_by(sac_crime_data.Police_District, sac_crime_data.Offense_Category).\
+    #                        order_by(sac_crime_data.Police_District,func.count(sac_crime_data.Offense_Category).desc()).all()
 
+    # values = session.query(sac_crime_data.Police_District,
+    #                        sac_crime_data.Offense_Category,
+    #                        func.count(sac_crime_data.Offense_Category)).\
+    #                        group_by(sac_crime_data.Police_District, sac_crime_data.Offense_Category).\
+    #                        order_by(func.count(sac_crime_data.Offense_Category).desc()).all()
     print(str(values))
     list = []
     for value in values:
@@ -78,7 +90,24 @@ def crime_data2():
         list.append(dict_values)
     return jsonify(list)
 
-    # route for top volume of crime for each day of week
+# route for crime by day of month(Brandon)
+# @app.route("/api/v1.0/crime_data3")
+# @cross_origin(origin='*', headers=['Content- Type', 'Authorization'])
+# def crime_data3():
+
+#     values = session.query(sac_crime_data.Beat,
+#                            func.count(sac_crime_data.Offense_Category)).\
+#         filter(sac_crime_data.Police_District.in_(['1', '2', '3', '4', '5', '6'])).\
+#         group_by(sac_crime_data.Beat).\
+#         order_by(func.count(sac_crime_data.Offense_Category).desc()).all()
+
+#     list = []
+#     for value in values:
+#         dict_values = {"Beat": value[0],
+#                        "Total_Crimes": value[1]}
+
+#         list.append(dict_values)
+#     return jsonify(list)
 
 
 @app.route("/api/v1.0/crime_data3")
