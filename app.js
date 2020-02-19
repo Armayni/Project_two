@@ -1,4 +1,23 @@
-
+anime({
+  targets: ['#pie','#pie1','#pie2'],
+  translateX: {
+    value: 50,
+    duration: 800
+  },
+  rotate: {
+    value: 360,
+    duration: 1800,
+    delay: 1500,
+    easing: 'easeInOutSine'
+  },
+  scale: {
+    value: 1,
+    duration: 1200,
+    delay: 1000,
+    easing: 'easeInOutQuart'
+  },
+  delay: 250 // All properties except 'scale' inherit 250ms delay
+});
 //to adjust the map height conflict with bootstrap
 function stuffToRezie() {
   var h_window = $(window).height();
@@ -125,13 +144,13 @@ $.ajax({
         height: 600,
         width: 800,
         colorway: [
-          "#482305",
-          "#783b09",
-          "#a8530d",
-          "#d86b11",
-          "#f1842a",
-          "#f49f59",
-          "#f7bb89"
+          "#0d7514",
+          "#12a31c",
+          "#17d224",
+          "#30ec3d",
+          "#5ef068",
+          "#8cf493",
+          "#baf8be"
         ],
         margin: {
           "t": 0,
@@ -186,25 +205,25 @@ $.ajax({
         width: 800,
         colorway: [
           "#000000",
-          "#180108",
-          "#300311",
-          "#480519",
-          "#600722",
-          "#78092b",
-          "#900b33",
-          "#a80d3c",
-          "#c00f44",
-          "#d8114d",
-          "#f01356",
-          "#f12a66",
-          "#f34277",
-          "#f45988",
-          "#f67199",
-          "#f789aa",
-          "#f9a0bb",
-          "#fab8cc",
-          "#fccfdd",
-          "#fde7ee"
+          "#0c000c",
+          "#190019",
+          "#260026",
+          "#330033",
+          "#400040",
+          "#4c004c",
+          "#590059",
+          "#660066",
+          "#730073",
+          "#800080",
+          "#8c198c",
+          "#993299",
+          "#a64ca6",
+          "#b266b2",
+          "#bf7fbf",
+          "#cc99cc",
+          "#d8b2d8",
+          "#e5cce5",
+          "#f2e5f2"
         ],
         margin: {
           "t": 0,
