@@ -19,7 +19,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/d3Style.css"> -->
-
+    <script type="text/javascript" src="typed.js"></script>
   </head>
 
   <body>
@@ -34,6 +34,7 @@
       <div class="nav-item active">
         <a class="nav-link" href="index.html">Sacramento crime <span class="sr-only">(current)</span></a>
       </div>
+ 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
 
@@ -65,13 +66,27 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-12">
-          <h1>Sacramento Crime</h1>
+          <h1 class="type">Sacramento Crime</h1>
+
+          <script type="text/javascript">
+            let typed = new Typed(".type", {
+              strings: ['xx','Explore the Map for Details','Sacramento Crime'],
+              showCursor: false,
+              startDelay: 1500,
+              smartBackspace: true,
+              // fadeOut:true,
+              // fadeOutDelay: 500,
+              typeSpeed: 60,
+              stringsElement: null,
+              loop: true,
+              loopCount: 1,
+              backSpeed: 50,
+              backDelay: 3000
+            });
+            
+            </script>
         </div>
       </div>
-
-      <!-- <div id="pie"></div> -->
-      <!-- <p>Map Area</p>
-      <div id="map"></div> -->
 
       <div class="row">
         <div class="col-xs-12  col-md-9">
@@ -83,8 +98,7 @@
       <div class="row">
         <div class="col-xs-12  col-md-9">
           <div class="article">
-            <!-- <h2>Correlations Discovered Between Poverty and Healthcare </h2> -->
-            <!-- <p>Map Area 2</p> -->
+       
             <div id="map2"></div>
           </div>
         </div>
@@ -93,7 +107,7 @@
 
     <!-- Footer-->
     <div id="footer">
-      <p>The Coding Boot Camp&copy;2020</p>
+      <p>Crime Visualizations&copy;2020</p>
     </div>
     <!-- API key -->
 

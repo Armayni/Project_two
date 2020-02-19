@@ -1,24 +1,3 @@
-// var svgWidth = 960;
-// var svgHeight = 500;
-
-// var margin = {
-//   top: 20,
-//   right: 40,
-//   bottom: 60,
-//   left: 100
-// };
-
-// var width = svgWidth - margin.left - margin.right;
-// var height = svgHeight - margin.top - margin.bottom;
-
-
-// var svg = d3.select("#scatter")
-//   .append("svg")
-//   .attr("width", svgWidth)
-//   .attr("height", svgHeight);
-
-// var chartGroup = svg.append("g")
-//   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 //to adjust the map height conflict with bootstrap
 function stuffToRezie() {
@@ -82,6 +61,14 @@ $.ajax({
       let layout = {
         height: 600,
         width: 800,
+        colorway: [
+          "#011f4b",
+          "#03396c",
+          "#005b96",
+          "#6497b1",
+          "#a1b8c9",
+          "#c9dce9"
+        ],
         margin: {
           "t": 0,
           "b": 0,
@@ -137,6 +124,15 @@ $.ajax({
       let layout3 = {
         height: 600,
         width: 800,
+        colorway: [
+          "#482305",
+          "#783b09",
+          "#a8530d",
+          "#d86b11",
+          "#f1842a",
+          "#f49f59",
+          "#f7bb89"
+        ],
         margin: {
           "t": 0,
           "b": 0,
@@ -188,6 +184,28 @@ $.ajax({
       let layout4 = {
         height: 600,
         width: 800,
+        colorway: [
+          "#000000",
+          "#180108",
+          "#300311",
+          "#480519",
+          "#600722",
+          "#78092b",
+          "#900b33",
+          "#a80d3c",
+          "#c00f44",
+          "#d8114d",
+          "#f01356",
+          "#f12a66",
+          "#f34277",
+          "#f45988",
+          "#f67199",
+          "#f789aa",
+          "#f9a0bb",
+          "#fab8cc",
+          "#fccfdd",
+          "#fde7ee"
+        ],
         margin: {
           "t": 0,
           "b": 0,

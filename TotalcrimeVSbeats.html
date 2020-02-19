@@ -10,6 +10,7 @@
     <!-- <link rel="stylesheet" href="assets/css/style.css"> -->
     <!-- <link rel="stylesheet" href="assets/css/d3Style.css"> -->
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="typed.js"></script>
   </head>
 
   <body>
@@ -36,18 +37,15 @@
             </a>
 
             <div class="dropdown-menu" aria-labelledby=" ">
-              <!-- <a class="dropdown-item" href="MAX_temperature.html">Max Temperature</a> -->
-              <!-- <a class="dropdown-item" href="Humidity.html">Humidity</a> -->
-              <!-- <a class="dropdown-item" href="Cloudiness.html">Cloudiness</a> -->
               <a class="dropdown-item" href="TotalcrimeVSdistrict.html">Total Crime by District</a>
               <a class="dropdown-item" href="TotalcrimeVSweekdays.html">Total Crime For Each Day of the Week</a>
               <a class="dropdown-item" href="TotalcrimeVSbeats.html">Total Crime by Police Beat</a>
             </div>
           </li>
-          <!-- <a class="nav-link" href="comparison_page.html">Comparison</a> -->
+        
           </li>
           <li class="nav-item">
-            <!-- <a class="nav-link" href="data_table.html">Data</a> -->
+            
 
         </ul>
 
@@ -57,7 +55,26 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12 col-md-12">
-          <h1>Total Crime by Police Beat</h1>
+          <h1 class="type4">Total Crime by Police Beat</h1>
+
+          <script type="text/javascript">
+            let typed = new Typed(".type4", {
+              strings: ['xx','Explore the Pie Chart for Details','Total Crime by Police Beat'],
+              showCursor: false,
+              startDelay: 1500,
+              smartBackspace: true,
+              // fadeOut:true,
+              // fadeOutDelay: 500,
+              typeSpeed: 60,
+              stringsElement: null,
+              loop: true,
+              loopCount: 1,
+              backSpeed: 50,
+              backDelay: 3000
+            });
+            
+            </script>
+
         </div>
       </div>
       <div id="pie2"></div>
@@ -72,7 +89,7 @@
       <div class="row">
         <div class="col-xs-12  col-md-9">
           <div class="article">
-            <!-- <h2>Correlations Discovered Between Crime and Day of Week </h2> -->
+          
 
           </div>
         </div>
@@ -81,7 +98,7 @@
 
     <!-- Footer-->
     <div id="footer">
-      <p>The Coding Boot Camp&copy;2020</p>
+      <p>Crime Visualizations&copy;2020</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
