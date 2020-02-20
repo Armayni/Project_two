@@ -1,5 +1,5 @@
 anime({
-  targets: ['#pie','#pie1','#pie2'],
+  targets: ['#pie', '#pie1', '#pie2'],
   translateX: {
     value: 50,
     duration: 800
@@ -105,7 +105,7 @@ $.ajax({
     //end of data call
   }
 })
-// Armine
+
 $.ajax({
   url: 'http://localhost:5000/api/v1.0/crime_data3',
   headers: {
@@ -238,7 +238,7 @@ $.ajax({
     init_fordata4();
   }
 })
-// end Armine
+
 
 var map = L.map("map2", {
   center: [38.57, -121.46],
